@@ -112,10 +112,6 @@ class Carro:                                           # Classe Carro
     def girar_a_esquerda(self):
         return self.direcao.girar_a_esquerda()
 
-
-
-
-
 NORTE = 'Norte'
 SUL = 'Sul'
 LESTE = "Leste"
@@ -151,4 +147,3 @@ class Motor:                                        # Classe Motor
     def frear(self):                                # Método frear da Classe Motor
         self.velocidade -= 2
         self.velocidade = max(0, self.velocidade)
-
