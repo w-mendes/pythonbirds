@@ -1,4 +1,6 @@
 class Pessoa:
+    olhos = 2 # Atributo de classe
+
     def __init__(self, *filhos, nome=None, idade=44): # Atributos de Instância, nome, idade e filhos
         self.idade = idade
         self.nome = nome
@@ -6,7 +8,6 @@ class Pessoa:
 
     def cumprimentar(self):
         return f'Olá {id(self)}'
-
 
 if __name__ == '__main__':
     Brian = Pessoa(nome='Brian')
@@ -22,8 +23,17 @@ if __name__ == '__main__':
     Ewerton.sobrenome = 'Mendes' # Adicionando atributo 'sobrenome'
     del Ewerton.filhos # Removendo um atributo
     print(Ewerton.sobrenome)
+    Ewerton.olhos = 1
+    del Ewerton.olhos
     print(Ewerton.__dict__) # Atributos de instancia ficam presentes no atributo especia '__dict__'
     print(Brian.__dict__)
     print(Bernardo.__dict__)
+    Pessoa.olhos = 3
+    print(Pessoa.olhos)
+    print(Ewerton.olhos)
+    print(Brian.olhos)
+    print(Bernardo.olhos)
+    print(id(Pessoa.olhos), id(Ewerton.olhos), id(Brian.olhos), id(Bernardo.olhos))
+
 
 
