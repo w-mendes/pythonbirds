@@ -1,5 +1,5 @@
 class Pessoa:
-    def __init__(self, *filhos, nome=None, idade=35): # Atributos de Instância, nome, idade e filhos
+    def __init__(self, *filhos, nome=None, idade=44): # Atributos de Instância, nome, idade e filhos
         self.idade = idade
         self.nome = nome
         self.filhos = list(filhos)
@@ -17,6 +17,13 @@ if __name__ == '__main__':
     print(Ewerton.cumprimentar()) # faz o mesmo da linha 8
     print(Ewerton.nome)
     print(Ewerton.idade)
-    for filhos in Ewerton.filhos:
-        print(filhos.nome)
+    for filho in Ewerton.filhos:
+        print(filho.nome)
+    Ewerton.sobrenome = 'Mendes' # Adicionando atributo 'sobrenome'
+    del Ewerton.filhos # Removendo um atributo
+    print(Ewerton.sobrenome)
+    print(Ewerton.__dict__)
+    print(Brian.__dict__)
+    print(Bernardo.__dict__)
+
 
