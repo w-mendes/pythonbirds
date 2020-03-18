@@ -8,7 +8,7 @@ O Motor terá a responsabilidade de controlar a velocidade. Ele oferece os segui
 2) Método acelerar, que deverá incrementar a velocidade de uma unidade
 3) Método frear que deverá decrementar a velocidade em duas unidades
 
-A direção terá a responsabilidade de controlar a direção. Ela oferece os seguintes atributos:
+A Direção terá a responsabilidade de controlar a direção. Ela oferece os seguintes atributos:
 1) Valor de direção com valores possíveis: Norte, Sul, Leste e Oeste.
 2) Método girar _a_direita
 3) Método girar_a_esquerda
@@ -77,19 +77,46 @@ A direção terá a responsabilidade de controlar a direção. Ela oferece os se
        >>> carro.frear()
        >>> carro.calcular_velocidade()
        0
-       >>> carro.calcular_direção()
-       >>> 'Norte'
+       >>> carro.calcular_direcao()
+       'Norte'
        >>> carro.girar_a_direita()
-       >>> carro.calcular_direção()
-       >>> 'Leste'
+       >>> carro.calcular_direcao()
+       'Leste'
        >>> carro.girar_a_esquerda()
-       >>> carro.calcular_direção()
-       >>> 'Norte'
+       >>> carro.calcular_direcao()
+       'Norte'
        >>> carro.girar_a_esquerda()
-       >>> carro.calcular_direção()
-       >>> 'Oeste'
+       >>> carro.calcular_direcao()
+       'Oeste'
 """
-NORTE='Norte'
+class Carro:                                           # Classe Carro
+    def __init__(self, direcao, motor):                # Atributos 'direcao' e 'motor' da Classe 'Carro'
+        self.motor = motor
+        self.direcao = direcao
+
+    def calcular_velocidade(self):
+        return self.motor.velocidade
+
+    def acelerar(self):
+        self.motor.acelerar()
+
+    def frear(self):
+        self.motor.frear()
+
+    def calcular_direcao(self):
+        return self.direcao.valor
+
+    def girar_a_direita(self):
+        return self.direcao.girar_a_direita()
+
+    def girar_a_esquerda(self):
+        return self.direcao.girar_a_esquerda()
+
+
+
+
+
+NORTE = 'Norte'
 SUL = 'Sul'
 LESTE = "Leste"
 OESTE = 'Oeste'
