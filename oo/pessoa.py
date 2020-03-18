@@ -22,7 +22,7 @@ if __name__ == '__main__':
     Ewerton.sobrenome = 'Mendes' # Adicionando atributo 'sobrenome'
     del Ewerton.filhos # Removendo um atributo
     print(Ewerton.sobrenome)
-    print(Ewerton.__dict__)
+    print(Ewerton.__dict__) # Atributos de instancia ficam presentes no atributo especia '__dict__'
     print(Brian.__dict__)
     print(Bernardo.__dict__)
 
